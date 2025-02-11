@@ -16,12 +16,12 @@ class Chemical():
 
         self.pubchem = None
 
-        self.get_PubChem_chemical()
+        self.search_pubchem()
     
     def __repr__(self):
         return self.name
 
-    def get_PubChem_chemical(self, return_single = True) -> Union[pcp.Compound, list]:
+    def search_pubchem(self, return_single = True) -> Union[pcp.Compound, list]:
         try:
             res = pcp.get_compounds(self.name, namespace='name')
             if return_single and len(res) !=0:
@@ -36,7 +36,7 @@ class Chemical():
             res = None
         return res
         
-    def display(self):
+    def show_molecule(self):
         if self.smiles_pc is None:
             print(f'None to display for Chemical named {self.name}')
         else:

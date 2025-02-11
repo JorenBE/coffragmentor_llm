@@ -11,11 +11,14 @@ class LinkerCollection():
 
     def __iter__(self):
         return iter(self.linkers)
+    
+    def __getitem__(self, index):
+        return self.linkers[index]
         
     def __repr__(self):
         return f"LinkerCollection({self.linkers})"
     
-    def display(self, cols = 2, figsize = (10,10)):
+    def show_molecules(self, cols = 2, figsize = (10,10)):
         linkers = [linker.smiles_pc for linker in self.linkers]
 
     

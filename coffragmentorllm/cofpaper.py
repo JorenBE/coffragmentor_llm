@@ -1,7 +1,7 @@
 import os
 import pymupdf
 
-from .COF import COFExtractor
+from .coffragmentor import COFExtractor
 from .config import RULES
 
 class PDFfile():
